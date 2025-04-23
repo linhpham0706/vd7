@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  #container2 {
+    background-color: lightblue; /* Màu nền mặc định */
+    padding: 20px;
+    border: 2px solid gray; /* Đường viền dày hơn một chút */
+    border-radius: 10px; /* Bo tròn góc */
+    cursor: pointer; /* Hiển thị con trỏ chuột kiểu "pointer" khi di chuột vào */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+  }
+
+  #container2.clicked {
+    background-color: lightcoral; /* Màu nền khi nhấp vào */
+  }
+</style>
+</head>
+<body>
+  <div id="container2" onclick="toggleColor()">
+    <h1 id="heading1">Xin chào CNTT 2024</h1>
+    <p id="logOldValue"></p>
+    <button onclick="changeHeading()">Thay đổi nội dung</button>
+  </div>
+
+  <script>
+    function changeHeading() {
+      var heading = document.getElementById("heading1");
+      var logArea = document.getElementById("logOldValue");
+      var oldHeading = heading.innerHTML;
+      logArea.innerText = "Giá trị h1 cũ là: " + oldHeading;
+      heading.innerHTML = "Học nghiêm túc và chăm chỉ hơn!";
+    }
+
+    function toggleColor() {
+      var container = document.getElementById("container2");
+      container.classList.toggle("clicked");
+    }
+  </script>
+</body>
+</html>
